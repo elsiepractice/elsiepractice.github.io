@@ -59,7 +59,7 @@ function test(){
   'GET',
   {"fields":"id,name,about,app_links,events.limit(10){description}"},
   function(response) {
-      console.los(response);
+      console.log(response);
       document.getElementById('fb-root').innerHTML = response.name ;
       // Insert your code here
   }
