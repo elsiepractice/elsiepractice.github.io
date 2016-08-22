@@ -57,9 +57,9 @@ function test(){
  FB.api(
   '/199868236700702',
   'GET',
-  {"fields":"id,name,about"},
+  {"fields":"id,name,about,app_links,events.limit(10){description}"},
   function(response) {
-      console.log(response);
+      console.los(response);
       // Insert your code here
   }
 );
