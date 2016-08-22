@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FB Data Visualization</title>
+<meta charset="UTF-8">
+</head>
+<body>
+
+  <div
+    class="fb-like"
+    data-share="true"
+    data-width="450"
+    data-show-faces="true">
+  </div>
+
+  <div
+    class="fb-login-button"
+    data-max-rows="1"
+    data-size="large"
+    data-show-faces="true"
+    data-auto-logout-link="true">
+  </div>
+  <div id="fb-root"></div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript" src="http://connect.facebook.net/zh_TW/all.js"></script>
+  <script>
+
+  FB.api(
+  '/199868236700702',
+  'GET',
+  {"fields":"name,likes{videos.limit(10)}"},
+  function(response) {
+      console.log(response);
+      // Insert your code here
+  }
+);
+
+      
+ /* window . fbAsyncInit = function () { 
+    FB . init ({ 
+      appId       : '584532525067068' , 
+      xfbml       : true , 
+      version     : 'v2.7' }); 
+      
+  }; 
+      
+FB.login(function(response) {
+    if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+     });
+    } else {
+     console.log('User cancelled login or did not fully authorize.');
+    }
+});
+    FB.getLoginStatus(function(response) {
+        if (response.session) {
+            alert(response.session);
+        }
+    })
+  
+  ( function ( d , s , id ){ var js , fjs = d . getElementsByTagName ( s )[ 0 ]; if ( d . getElementById ( id )) { return ;} 
+     js = d . createElement ( s ); js . id = id ; 
+     js . src = "//connect.facebook.net/zh_TW/sdk.js" ; 
+     fjs . parentNode . insertBefore ( js , fjs ); }( document , 'script' , 'facebook-jssdk' ));*/ </script>
+
+
+</body>
+</html>
