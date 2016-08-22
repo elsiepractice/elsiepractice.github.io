@@ -1,32 +1,24 @@
-
 <html>
+
 <head>
-<title>FB Data Visualization</title>
-<meta charset="UTF-8">
+    <title>FB Data Visualization</title>
+    <meta charset="UTF-8">
 </head>
+
 <body>
 
-  <div
-    class="fb-like"
-    data-share="true"
-    data-width="450"
-    data-show-faces="true">
-  </div>
+    <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+    </div>
 
-  <div
-    class="fb-login-button"
-    data-max-rows="1"
-    data-size="large"
-    data-show-faces="true"
-    data-auto-logout-link="true">
-  </div>
-  <div id="fb-root"></div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="true" data-auto-logout-link="true">
+    </div>
+    <div id="fb-root"></div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
-<script type="text/javascript" src="https://connect.facebook.net/zh_TW/all.js"></script>
-  <script>
-      
-      function statusChangeCallback(response) {
+    <script type="text/javascript" src="https://connect.facebook.net/zh_TW/all.js"></script>
+    <script>
+        
+        function statusChangeCallback(response) {
             console.log('statusChangeCallback');
             console.log(response);
             // The response object is returned with a status field that lets the
@@ -47,50 +39,55 @@
                     'into Facebook.';
             }
         }
-      
+
         function checkLoginState() {
             FB.getLoginStatus(function (response) {
                 statusChangeCallback(response);
             });
         }
 
-function test(){
- FB.api(
-  '/199868236700702',
-  'GET',
-  {"fields":"id,name,about,app_links,events.limit(10){description}"},
-  function(response) {
-      console.log(response);
-      document.getElementById('fb-root').innerHTML = response.id'+'response.event{description} ;
-      // Insert your code here
-  }
-);
-}
- 
-      
-  window . fbAsyncInit = function () { 
-    FB . init ({ 
-      appId       : '584532525067068' , 
-      xfbml       : true , 
-      version     : 'v2.7' }); 
-      
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-  });
-      
-  }; 
+        function test() {
+            FB.api(
+                '/199868236700702',
+                'GET', {
+                    "fields": "id,name,about,app_links,events.limit(10){description}"
+                },
+                function (response) {
+                    console.log(response);
+                    // Insert your code here
+                }
+            );
+        }
 
 
-  
-  ( function ( d , s , id ){ var js , fjs = d . getElementsByTagName ( s )[ 0 ]; if ( d . getElementById ( id )) { return ;} 
-     js = d . createElement ( s ); js . id = id ; 
-     js . src = "//connect.facebook.net/zh_TW/sdk.js" ; 
-     fjs . parentNode . insertBefore ( js , fjs ); }( document , 'script' , 'facebook-jssdk' )); 
-    
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '584532525067068',
+                xfbml: true,
+                version: 'v2.7'
+            });
 
-      
-</script>
+            FB.getLoginStatus(function (response) {
+                statusChangeCallback(response);
+            });
+
+        };
+
+
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/zh_TW/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
 
 </body>
+
 </html>
