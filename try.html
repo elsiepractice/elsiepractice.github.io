@@ -26,7 +26,7 @@
 <script type="text/javascript" src="https://connect.facebook.net/zh_TW/all.js"></script>
   <script>
 
-  FB.api(
+ /* FB.api(
   '/199868236700702',
   'GET',
   {"fields":"name,likes{videos.limit(10)}"},
@@ -34,10 +34,10 @@
       console.log(response);
       // Insert your code here
   }
-);
+);*/
 
       
- /* window . fbAsyncInit = function () { 
+  window . fbAsyncInit = function () { 
     FB . init ({ 
       appId       : '584532525067068' , 
       xfbml       : true , 
@@ -48,9 +48,18 @@
 FB.login(function(response) {
     if (response.authResponse) {
      console.log('Welcome!  Fetching your information.... ');
-     FB.api('/me', function(response) {
+    /* FB.api('/me', function(response) {
        console.log('Good to see you, ' + response.name + '.');
-     });
+     });*/
+     FB.api(
+  '/199868236700702',
+  'GET',
+  {"fields":"name,likes{videos.limit(10)}"},
+  function(response) {
+      console.log(response);
+      // Insert your code here
+  }
+);
     } else {
      console.log('User cancelled login or did not fully authorize.');
     }
@@ -64,7 +73,7 @@ FB.login(function(response) {
   ( function ( d , s , id ){ var js , fjs = d . getElementsByTagName ( s )[ 0 ]; if ( d . getElementById ( id )) { return ;} 
      js = d . createElement ( s ); js . id = id ; 
      js . src = "//connect.facebook.net/zh_TW/sdk.js" ; 
-     fjs . parentNode . insertBefore ( js , fjs ); }( document , 'script' , 'facebook-jssdk' ));*/ </script>
+     fjs . parentNode . insertBefore ( js , fjs ); }( document , 'script' , 'facebook-jssdk' )); </script>
 
 
 </body>
