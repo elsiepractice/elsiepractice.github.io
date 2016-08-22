@@ -60,7 +60,7 @@ function test(){
   {"fields":"id,name,about,app_links,events.limit(10){description}"},
   function(response) {
       console.log(response);
-      document.getElementById('fb-root').innerHTML = response ;
+      document.getElementById('fb-root').innerHTML = response.id+response.event ;
       // Insert your code here
   }
 );
